@@ -1,5 +1,12 @@
 var isDate = function (input) {
-  //   write your code here
+  // If input is already a Date object and it's valid
+  if (input instanceof Date && !isNaN(input.getTime())) {
+    return true;
+  }
+
+  // If input is a string or number, try to create a Date object
+  const parsed = new Date(input);
+  return !isNaN(parsed.getTime());
 };
 
 // Do not change the code below.
